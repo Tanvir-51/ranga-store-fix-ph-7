@@ -10,12 +10,12 @@ loadProducts();
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.image;
+    const image = product.image; //storing the images from the api in a variable
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${image}></img>
+    <img class="product-image" src=${image}></img> 
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
@@ -30,7 +30,7 @@ const showProducts = (products) => {
 };
 let count = 0;
 const addToCart = (id, price) => {
-  count = count + 1;
+  count = count + 1; // updating number of total products
   updatePrice("price", price);
 
   updateTaxAndCharge();
@@ -39,7 +39,7 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseFloat(element);
+  const converted = parseFloat(element); // converting string to a float value
   return converted;
 };
 
@@ -48,12 +48,12 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = total.toFixed(2);
+  document.getElementById(id).innerText = total.toFixed(2); // ensuring the decimal points cover 2 decimal value
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value.toFixed(2); // ensuring the decimal points cover 2 decimal value
 };
 
 // update delivery charge and total Tax
@@ -71,7 +71,7 @@ const updateTaxAndCharge = () => {
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
   }
-  updateTotal();
+  updateTotal(); // accessing price,delivery and tax charge to calculate final value
 };
 
 //grandTotal update function
@@ -80,5 +80,5 @@ const updateTotal = () => {
     getInputValue("price") +
     getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal.toFixed(2);
+  document.getElementById("total").innerText = grandTotal.toFixed(2); // calculating total amount upto 2 decimal point
 };

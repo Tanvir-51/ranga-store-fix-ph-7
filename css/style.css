@@ -3,7 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .search-fields {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .search-box {
   margin: auto;
@@ -12,6 +12,7 @@ body {
 .search-field {
   border-radius: 5px;
   padding: 5px;
+  width: 25%;
 }
 
 #all-products {
