@@ -27,16 +27,16 @@
     <header></header>
     <main class="main">
       <div class="search-fields">
-        <div class="search-box">
-          <input id="input-field" class="search-field" type="text" />
-
+        <div class="search-box text-center">
+          <input
+            id="input-field"
+            class="search-field w-100"
+            type="text"
+            placeholder="Search Products"
+          />
           <button
-            type="button"
-            class="btn btn-primary search-button"
-            data-toggle="button"
-            aria-pressed="false"
-            autocomplete="off"
             id="search-btn"
+            class="btn btn-primary search-button"
             onclick="loadProducts()"
           >
             Search
