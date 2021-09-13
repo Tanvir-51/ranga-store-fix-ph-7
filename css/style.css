@@ -40,11 +40,13 @@ body {
   padding: 10px;
   transition: 0.6s;
   background: #9db5b2;
+  margin: 5px 0 0 10px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   border: 1px solid cyan;
+  background: #b59da0;
 }
 .product-image {
   width: 150px;
